@@ -2,7 +2,7 @@
   "name": "zhiyicx/plus-install-plugin",
   "type": "composer-plugin",
   "description": "ThinkSNS Plus component require plugin.",
-  "keywords": ["ts", "ts+", "plus", "thinksns"],
+  "keywords": ["ts", "ts", "plus", "thinksns"],
   "license": "MIT",
   "authors": [
     {
