@@ -8,6 +8,7 @@ use Composer\Package\Link;
 use Composer\DependencyResolver\Pool;
 use Composer\Installer\InstallerInterface;
 use Composer\Package\Package;
+use Zhiyi\Component\Installer\PlusInstallPlugin\InstallerInterface as PlusInstallerInterface;
 
 class InstallManager
 {
@@ -42,8 +43,17 @@ class InstallManager
 
     public function install($installerClass)
     {
-        var_dump(new $installerClass);
-        exit;
+        $installer = new $installerClass;
+
+        if (!($installer instanceof PlusInstallerInterface)) {
+            throw new \Exception(sprintf(
+                'The class "%s" not implement "%s"',
+                $installerClass,
+                PlusInstallerInterface::class
+            ), 1);
+        }
+
+        $installer->install();
     }
 
     /**
