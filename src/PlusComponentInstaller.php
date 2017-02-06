@@ -47,6 +47,11 @@ class PlusComponentInstaller extends LibraryInstaller
         parent::install($repo, $package);
 
         $generator = $this->composer->getAutoloadGenerator();
+        $map = $package->getAutoload();
+
+        $classLoader = $generator->createLoader($map);
+        $classLoader->register();
+
         $installerClass = $extra['installer-class'];
         $is = class_exists($installerClass);
 
@@ -54,7 +59,6 @@ class PlusComponentInstaller extends LibraryInstaller
             // parent::uninstall($repo, $package);
         // }
 
-        var_dump($package->getAutoload());
         var_dump($is, $installerClass);exit;
     }
 }
