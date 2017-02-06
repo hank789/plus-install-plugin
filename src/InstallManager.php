@@ -24,9 +24,6 @@ class InstallManager
         $this->installer = $installer;
         $this->plugin = $plugin;
 
-        var_dump(function_exists('app'));
-        exit;
-
         $this->createAutoload();
     }
 
