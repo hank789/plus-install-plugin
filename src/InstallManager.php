@@ -42,7 +42,7 @@ class InstallManager
 
     public function install($installerClass)
     {
-        var_dump($installerClass);
+        var_dump(new $installerClass);
         exit;
     }
 
