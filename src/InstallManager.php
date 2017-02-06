@@ -15,12 +15,24 @@ class InstallManager
     protected $composer;
     protected $package;
     protected $installer;
+    protected $plugin;
 
-    public function __construct(Composer $composer, PackageInterface $package, InstallerInterface $installer)
+    public function __construct(Composer $composer, PackageInterface $package, InstallerInterface $plgin, PlusInstallerInterface $installer)
     {
         $this->composer = $composer;
         $this->package = $package;
         $this->installer = $installer;
+        $this->plugin = $plugin;
+
+        var_dump(function_exists('app'));
+        exit;
+
+        $this->createAutoload();
+    }
+
+    protected function createAutoload()
+    {
+        $package = $this->package;
 
         $localRepo = $this->composer->getRepositoryManager()->getLocalRepository();
         $pool = new Pool('dev');
@@ -32,7 +44,7 @@ class InstallManager
         $generator = $this->composer->getAutoloadGenerator();
         $autoloads = [];
         foreach ($autoloadPackages as $autoloadPackage) {
-            $downloadPath = $this->installer->getInstallPath($autoloadPackage, false);
+            $downloadPath = $this->plugin->getInstallPath($autoloadPackage, false);
             $autoloads[] = array($autoloadPackage, $downloadPath);
         }
 
@@ -41,19 +53,8 @@ class InstallManager
         $classLoader->register();
     }
 
-    public function install($installerClass)
+    public function install()
     {
-        $installer = new $installerClass;
-
-        if (!($installer instanceof PlusInstallerInterface)) {
-            throw new \Exception(sprintf(
-                'The class "%s" not implement "%s"',
-                $installerClass,
-                PlusInstallerInterface::class
-            ), 1);
-        }
-
-        $installer->install();
     }
 
     /**
