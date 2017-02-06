@@ -54,8 +54,6 @@ class PlusComponentInstaller extends LibraryInstaller
             $manager = new InstallManager($this->composer, $package, $this, $installerClass);
             $manager->install();
 
-            var_dump(function_exists('app'));exit;
-
         } catch (\Exception $e) {
             parent::uninstall($repo, $package);
             throw $e;
