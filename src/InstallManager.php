@@ -7,6 +7,7 @@ use Composer\Package\PackageInterface;
 use Composer\Package\Link;
 use Composer\DependencyResolver\Pool;
 use Composer\Installer\InstallerInterface;
+use Composer\Package\Package;
 
 class InstallManager
 {
