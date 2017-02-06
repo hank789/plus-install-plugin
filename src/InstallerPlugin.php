@@ -21,7 +21,6 @@ class InstallerPlugin implements PluginInterface
      */
     public function activate(Composer $composer, IOInterface $io)
     {
-        var_dump(2);exit;
         $installer = new PlusComponentInstaller($io, $composer, $this->type);
         $composer
             ->getInstallationManager()
