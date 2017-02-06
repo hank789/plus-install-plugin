@@ -61,7 +61,7 @@ class InstallManager
 
     public function install()
     {
-        throw new \Exception((string) function_exists('app'), 1);
+        throw new \Exception((string) function_exists('app').'123', 1);
         
     }
 
