@@ -50,6 +50,6 @@ class PlusComponentInstaller extends LibraryInstaller
         parent::install($repo, $package);
 
         $manager = new InstallManager($this->composer, $package, $this);
-        $manager->install($extra['installer-class'];);
+        $manager->install($extra['installer-class']);
     }
 }
