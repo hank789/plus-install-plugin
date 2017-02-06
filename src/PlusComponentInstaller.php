@@ -54,7 +54,7 @@ class PlusComponentInstaller extends LibraryInstaller
             // parent::uninstall($repo, $package);
         // }
 
-        var_dump($generator);
+        var_dump($package->getAutoload());
         var_dump($is, $installerClass);exit;
     }
 }
