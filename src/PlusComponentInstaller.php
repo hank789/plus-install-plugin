@@ -52,7 +52,12 @@ class PlusComponentInstaller extends LibraryInstaller
         $classLoader = $generator->createLoader($map);
         $classLoader->register();
 
+        var_dump($classLoader);exit;
+
         $installerClass = $extra['installer-class'];
+
+        var_dump($classLoader->findFile($installerClass));
+
         $is = class_exists($installerClass);
 
         // if ($is === false) {
