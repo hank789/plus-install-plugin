@@ -17,14 +17,23 @@ class InstallManager
     protected $installer;
     protected $plugin;
 
-    public function __construct(Composer $composer, PackageInterface $package, InstallerInterface $plgin, PlusInstallerInterface $installer)
+    public function __construct(Composer $composer, PackageInterface $package, InstallerInterface $plgin, $installerClass)
     {
         $this->composer = $composer;
         $this->package = $package;
-        $this->installer = $installer;
         $this->plugin = $plugin;
 
         $this->createAutoload();
+
+        $this->installer = new $installerClass;
+
+        if (!($this->installer instanceof PlusInstallerInterface)) {
+            throw new \Exception(sprintf(
+                'The "%s" not implement "%s"',
+                $installerClass,
+                PlusInstallerInterface::class
+            ), 1);
+        }
     }
 
     protected function createAutoload()

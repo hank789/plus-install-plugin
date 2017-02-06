@@ -51,8 +51,7 @@ class PlusComponentInstaller extends LibraryInstaller
 
         $installerClass = $extra['installer-class'];
         try {
-            $installer = new $installerClass;
-            $manager = new InstallManager($this->composer, $package, $this, $installer);
+            $manager = new InstallManager($this->composer, $package, $this, $installerClass);
             $manager->install();
 
             var_dump(function_exists('app'));exit;
