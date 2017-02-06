@@ -8,6 +8,7 @@ use Composer\Repository\InstalledRepositoryInterface;
 use InvalidArgumentException;
 use Composer\DependencyResolver\Pool;
 use Composer\Package\Package;
+use Composer\Package\Link;
 
 class PlusComponentInstaller extends LibraryInstaller
 {
