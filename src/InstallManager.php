@@ -30,7 +30,7 @@ class InstallManager
         $generator = $this->composer->getAutoloadGenerator();
         $autoloads = [];
         foreach ($autoloadPackages as $autoloadPackage) {
-            $downloadPath = $this->installer->getInstallPath($autoloadPackage, (null && $globalRepo->hasPackage($autoloadPackage)));
+            $downloadPath = $this->installer->getInstallPath($autoloadPackage, false);
             $autoloads[] = array($autoloadPackage, $downloadPath);
         }
 
