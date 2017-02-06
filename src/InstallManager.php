@@ -17,7 +17,7 @@ class InstallManager
     protected $installer;
     protected $plugin;
 
-    public function __construct(Composer $composer, PackageInterface $package, InstallerInterface $plgin, $installerClass)
+    public function __construct(Composer $composer, PackageInterface $package, InstallerInterface $plugin, $installerClass)
     {
         $this->composer = $composer;
         $this->package = $package;
