@@ -5,7 +5,6 @@ namespace Zhiyi\Component\Installer\PlusInstallPlugin;
 use Composer\Package\PackageInterface;
 use Composer\Installer\LibraryInstaller;
 use Composer\Repository\InstalledRepositoryInterface;
-use Composer\Package\PackageInterface;
 use InvalidArgumentException;
 
 class PlusComponentInstaller extends LibraryInstaller
@@ -18,9 +17,9 @@ class PlusComponentInstaller extends LibraryInstaller
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
-    public function supports(string $packageType): bool
+    public function supports($packageType): bool
     {
-        $isPlusComponent = $packageType === $this->type;
+        $isPlusComponent = $packageType === 'plus-component';
 
         return $isPlusComponent;
     }
@@ -47,9 +46,14 @@ class PlusComponentInstaller extends LibraryInstaller
         // run installer.
         parent::install($repo, $package);
 
-        $generator = $this->composer->getAutoloadGenerator();
+        // $generator = $this->composer->getAutoloadGenerator();
         $installerClass = $extra['installer-class'];
+        $is = class_exists($installerClass);
 
-        parent::uninstall($repo, $package);
+        // if ($is === false) {
+            parent::uninstall($repo, $package);
+        // }
+
+        var_dump($is);exit;
     }
 }
