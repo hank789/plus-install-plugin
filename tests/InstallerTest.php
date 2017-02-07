@@ -2,11 +2,9 @@
 
 namespace Zhiyi\Component\Installer\PlusInstallPlugin\Test;
 
-use Composer\Util\Filesystem;
 use Composer\Composer;
 use Composer\Config;
-use Composer\Installer\LibraryInstaller;
-
+use Composer\Util\Filesystem;
 use Zhiyi\Component\Installer\PlusInstallPlugin\PlusComponentInstaller;
 
 class InstallerTest extends TestCase
@@ -23,7 +21,7 @@ class InstallerTest extends TestCase
 
     protected function setUp()
     {
-        $this->fs = new Filesystem;
+        $this->fs = new Filesystem();
 
         $this->composer = new Composer();
         $this->config = new Config();
@@ -41,12 +39,12 @@ class InstallerTest extends TestCase
         $this->binDir = $this->rootDir.DIRECTORY_SEPARATOR.'bin';
         $this->ensureDirectoryExistsAndClear($this->binDir);
 
-        $this->config->merge(array(
-            'config' => array(
+        $this->config->merge([
+            'config' => [
                 'vendor-dir' => $this->vendorDir,
-                'bin-dir' => $this->binDir,
-            ),
-        ));
+                'bin-dir'    => $this->binDir,
+            ],
+        ]);
 
         $this->dm = $this->getMockBuilder('Composer\Downloader\DownloadManager')
             ->disableOriginalConstructor()
@@ -76,7 +74,7 @@ class InstallerTest extends TestCase
             ->expects($this->any())
             ->method('getExtra')
             ->will($this->returnValue([
-                'installer-class' => 'demo'
+                'installer-class' => 'demo',
             ]));
 
         $this->dm
@@ -97,9 +95,7 @@ class InstallerTest extends TestCase
     protected function createPackageMock()
     {
         return $this->getMockBuilder('Composer\Package\Package')
-            ->setConstructorArgs(array(md5(mt_rand()), '1.0.0.0', '1.0.0'))
+            ->setConstructorArgs([md5(mt_rand()), '1.0.0.0', '1.0.0'])
             ->getMock();
     }
-
 }
-

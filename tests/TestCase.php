@@ -26,7 +26,7 @@ abstract class TestCase extends BaseTestCase
         $root = sys_get_temp_dir();
 
         do {
-            $unique = $root . DIRECTORY_SEPARATOR . uniqid('plus-test-' . rand(1000, 9000));
+            $unique = $root.DIRECTORY_SEPARATOR.uniqid('plus-test-'.rand(1000, 9000));
 
             if (!file_exists($unique) && Silencer::call('mkdir', $unique, 0777)) {
                 return realpath($unique);
@@ -47,4 +47,3 @@ abstract class TestCase extends BaseTestCase
         mkdir($directory, 0777, true);
     }
 }
-

@@ -13,9 +13,11 @@ class InstallerPlugin implements PluginInterface
     /**
      * Plugin entrance。
      *
-     * @param Composer $composer
+     * @param Composer    $composer
      * @param IOInterface $io
+     *
      * @return void
+     *
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */

@@ -2,20 +2,20 @@
 
 namespace Zhiyi\Component\Installer\PlusInstallPlugin;
 
-use Composer\Package\PackageInterface;
+use Composer\Composer;
+use Composer\Installer\BinaryInstaller;
 use Composer\Installer\LibraryInstaller;
+use Composer\IO\IOInterface;
+use Composer\Package\PackageInterface;
 use Composer\Repository\InstalledRepositoryInterface;
+use Composer\Util\Filesystem as FilesystemUtil;
 use InvalidArgumentException;
 use Symfony\Component\Filesystem\Filesystem;
-
-use Composer\IO\IOInterface;
-use Composer\Composer;
-use Composer\Util\Filesystem as FilesystemUtil;
-use Composer\Installer\BinaryInstaller;
 
 class PlusComponentInstaller extends LibraryInstaller
 {
     protected $fs;
+
     /**
      * Initializes library installer.
      *
@@ -35,7 +35,9 @@ class PlusComponentInstaller extends LibraryInstaller
      * supports package type.
      *
      * @param string $packageType
+     *
      * @return bool
+     *
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
