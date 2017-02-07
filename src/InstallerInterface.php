@@ -36,7 +36,7 @@ interface InstallerInterface
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
-    public function resource(): array;
+    public function resource();
 
     /**
      * 路由配置.
@@ -46,5 +46,5 @@ interface InstallerInterface
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
-    public function router(): string;
+    public function router();
 }
