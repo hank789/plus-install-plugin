@@ -25,7 +25,7 @@ abstract class AbstractInstaller implements InstallerInterface
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
-    protected function __construct(Command $command, OutputStyle $output)
+    public function __construct(Command $command, OutputStyle $output)
     {
         $this->command = $command;
         $this->output = $output;
