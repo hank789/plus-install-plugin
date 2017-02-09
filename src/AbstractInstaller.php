@@ -10,12 +10,12 @@ abstract class AbstractInstaller implements InstallerInterface
     /**
      * The component:install commmand instance.
      */
-    protected function $command;
+    protected $command;
 
     /**
      * The command output instance.
      */
-    protected function $output;
+    protected $output;
 
     /**
      * 构造方法

@@ -66,7 +66,7 @@ interface InstallerInterface
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
-    public function getAuthor(): array
+    public function getAuthor(): array;
 
     /**
      * 应用安装.
