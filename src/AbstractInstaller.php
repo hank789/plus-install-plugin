@@ -18,10 +18,11 @@ abstract class AbstractInstaller implements InstallerInterface
     protected $output;
 
     /**
-     * 构造方法
+     * 构造方法.
      *
-     * @param Illuminate\Console\Command $command
+     * @param Illuminate\Console\Command     $command
      * @param Illuminate\Console\OutputStyle $output
+     *
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */

@@ -10,7 +10,7 @@ interface InstallerInterface
     /**
      * 构造方法.
      *
-     * @param Illuminate\Console\Command $command
+     * @param Illuminate\Console\Command     $command
      * @param Illuminate\Console\OutputStyle $output
      *
      * @author Seven Du <shiweidu@outlook.com>
@@ -22,6 +22,7 @@ interface InstallerInterface
      * Get app name.
      *
      * @return string
+     *
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
@@ -31,6 +32,7 @@ interface InstallerInterface
      * get app version.
      *
      * @return string
+     *
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
@@ -40,6 +42,7 @@ interface InstallerInterface
      * get app logo URL.
      *
      * @return string URL
+     *
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
@@ -49,9 +52,10 @@ interface InstallerInterface
      * Get developer info.
      *
      * @return array
+     *
      * @see FQSEN
      * ```php
-     * 
+     *
      * public function getAuthor(): array
      * {
      *     return [
@@ -60,9 +64,9 @@ interface InstallerInterface
      *         'homepage' => 'http://medz.cn'
      *     ];
      * }
-     * 
+     *
      * ```
-     * 
+     *
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
