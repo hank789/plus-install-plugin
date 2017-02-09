@@ -2,9 +2,9 @@
 
 namespace Zhiyi\Component\Installer\PlusInstallPlugin;
 
+use Closure;
 use Illuminate\Console\Command;
 use Illuminate\Console\OutputStyle;
-use Closure;
 
 interface InstallerInterface
 {
