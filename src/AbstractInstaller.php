@@ -4,6 +4,7 @@ namespace Zhiyi\Component\Installer\PlusInstallPlugin;
 
 use Illuminate\Console\Command;
 use Illuminate\Console\OutputStyle;
+use Closure;
 
 abstract class AbstractInstaller implements InstallerInterface
 {
@@ -62,8 +63,9 @@ abstract class AbstractInstaller implements InstallerInterface
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
-    public function install()
+    public function install(Closure $next)
     {
+        $next();
         $this->output->success("Installed the {$this->getName()}");
     }
 
@@ -73,8 +75,9 @@ abstract class AbstractInstaller implements InstallerInterface
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
-    public function update()
+    public function update(Closure $next)
     {
+        $next();
         $this->output->success("Updated The {$this->getName()}");
     }
 
@@ -84,8 +87,9 @@ abstract class AbstractInstaller implements InstallerInterface
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
-    public function uninstall()
+    public function uninstall(Closure $next)
     {
+        $next();
         $this->output->success("Uninstall The {$this->getName()}");
     }
 }

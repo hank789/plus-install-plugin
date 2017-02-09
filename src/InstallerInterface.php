@@ -4,6 +4,7 @@ namespace Zhiyi\Component\Installer\PlusInstallPlugin;
 
 use Illuminate\Console\Command;
 use Illuminate\Console\OutputStyle;
+use Closure;
 
 interface InstallerInterface
 {
@@ -75,26 +76,32 @@ interface InstallerInterface
     /**
      * 应用安装.
      *
+     * @param Closure $next
+     *
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
-    public function install();
+    public function install(Closure $next);
 
     /**
      * 应用升级.
      *
-     * @author Seven Du <shiweidu@outlook.com>
-     * @homepage http://medz.cn
-     */
-    public function update();
-
-    /**
-     * 应用卸载.
+     * @param Closure $next
      *
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
-    public function uninstall();
+    public function update(Closure $next);
+
+    /**
+     * 应用卸载.
+     *
+     * @param Closure $next
+     *
+     * @author Seven Du <shiweidu@outlook.com>
+     * @homepage http://medz.cn
+     */
+    public function uninstall(Closure $next);
 
     /**
      * 静态资源.
