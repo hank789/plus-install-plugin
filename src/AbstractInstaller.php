@@ -63,9 +63,8 @@ abstract class AbstractInstaller implements InstallerInterface
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
-    public function install(Closure $next, Command $command, OutputStyle $output)
+    public function install(Closure $next)
     {
-        $this->setCommand($command, $output);
         $next();
         $this->output->success("Installed the {$this->getName()}");
     }
@@ -76,9 +75,8 @@ abstract class AbstractInstaller implements InstallerInterface
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
-    public function update(Closure $next, Command $command, OutputStyle $output)
+    public function update(Closure $next)
     {
-        $this->setCommand($command, $output);
         $next();
         $this->output->success("Updated The {$this->getName()}");
     }
@@ -89,9 +87,8 @@ abstract class AbstractInstaller implements InstallerInterface
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
-    public function uninstall(Closure $next, Command $command, OutputStyle $output)
+    public function uninstall(Closure $next)
     {
-        $this->setCommand($command, $output);
         $next();
         $this->output->success("Uninstall The {$this->getName()}");
     }
