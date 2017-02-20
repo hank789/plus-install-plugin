@@ -9,6 +9,7 @@ use Illuminate\Console\OutputStyle;
 interface InstallerInterface
 {
     public function setCommand(Command $command, OutputStyle $output);
+
     /**
      * Get the component info.
      *
