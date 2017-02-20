@@ -106,11 +106,10 @@ class PlusComponentInstaller extends LibraryInstaller
         $settings = $this->parentConfig($configFile);
 
         if (isset($settings[$componentName])) {
-
             if ($settings[$componentName]['installed'] === true) {
                 throw new \Exception(
                     'The component is not uninstalled, Please run:'.PHP_EOL,
-                    '   php artisan component '.$componentName.PHP_EOL    
+                    '   php artisan component '.$componentName.PHP_EOL
                 );
             }
 

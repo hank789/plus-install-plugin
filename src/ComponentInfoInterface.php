@@ -16,6 +16,7 @@ interface ComponentInfoInterface
      * @see 测试应用
      *
      * @return string
+     *
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
@@ -37,6 +38,7 @@ interface ComponentInfoInterface
      * @see https://example/logo.png
      *
      * @return string
+     *
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
@@ -51,6 +53,7 @@ interface ComponentInfoInterface
      * @see https://example/icon.png
      *
      * @return string
+     *
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
@@ -58,12 +61,13 @@ interface ComponentInfoInterface
 
     /**
      * Get the component admin list link.
-     * 
+     *
      * @see route('/example/admin');
      * @see url('/example/admin');
      * @see https://example/example/admin
      *
      * @return mixed
+     *
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */

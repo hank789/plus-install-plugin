@@ -23,6 +23,7 @@ interface InstallerInterface
      * Get the component info.
      *
      * @return ?ComponentInfoInterface
+     *
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
