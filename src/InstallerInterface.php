@@ -3,9 +3,12 @@
 namespace Zhiyi\Component\Installer\PlusInstallPlugin;
 
 use Closure;
+use Illuminate\Console\Command;
+use Illuminate\Console\OutputStyle;
 
 interface InstallerInterface
 {
+    public function setCommand(Command $command, OutputStyle $output);
     /**
      * Get the component info.
      *
