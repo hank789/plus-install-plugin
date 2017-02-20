@@ -3,22 +3,9 @@
 namespace Zhiyi\Component\Installer\PlusInstallPlugin;
 
 use Closure;
-use Illuminate\Console\Command;
-use Illuminate\Console\OutputStyle;
 
 interface InstallerInterface
 {
-    /**
-     * 构造方法.
-     *
-     * @param Illuminate\Console\Command     $command
-     * @param Illuminate\Console\OutputStyle $output
-     *
-     * @author Seven Du <shiweidu@outlook.com>
-     * @homepage http://medz.cn
-     */
-    public function __construct(Command $command, OutputStyle $output);
-
     /**
      * Get the component info.
      *
