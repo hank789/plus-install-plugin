@@ -20,58 +20,13 @@ interface InstallerInterface
     public function __construct(Command $command, OutputStyle $output);
 
     /**
-     * Get app name.
+     * Get the component info.
      *
-     * @return string
-     *
+     * @return ?ComponentInfoInterface
      * @author Seven Du <shiweidu@outlook.com>
      * @homepage http://medz.cn
      */
-    public function getName(): string;
-
-    /**
-     * get app version.
-     *
-     * @return string
-     *
-     * @author Seven Du <shiweidu@outlook.com>
-     * @homepage http://medz.cn
-     */
-    public function getVersion(): string;
-
-    /**
-     * get app logo URL.
-     *
-     * @return string URL
-     *
-     * @author Seven Du <shiweidu@outlook.com>
-     * @homepage http://medz.cn
-     */
-    public function getLogo(): string;
-
-    /**
-     * Get developer info.
-     *
-     * @return array
-     *
-     * @see FQSEN
-     * ```php
-     *
-     * public function getAuthor(): array
-     * {
-     *     return [
-     *         'name' => 'Seven Du',
-     *         'email' => 'shiweidu@outlook.com',
-     *         'homepage' => 'http://medz.cn'
-     *     ];
-     * }
-     *
-     * ```
-     *
-     * @author Seven Du <shiweidu@outlook.com>
-     * @homepage http://medz.cn
-     */
-    public function getAuthor(): array;
+    public function getComponentInfo();
 
     /**
      * 应用安装.

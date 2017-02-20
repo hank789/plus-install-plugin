@@ -106,6 +106,14 @@ class PlusComponentInstaller extends LibraryInstaller
         $settings = $this->parentConfig($configFile);
 
         if (isset($settings[$componentName])) {
+
+            if ($settings[$componentName]['installed'] === true) {
+                throw new \Exception(
+                    'The component is not uninstalled, Please run:'.PHP_EOL,
+                    '   php artisan component '.$componentName.PHP_EOL    
+                );
+            }
+
             unset($settings[$componentName]);
         }
 
@@ -115,10 +123,16 @@ class PlusComponentInstaller extends LibraryInstaller
     protected function updateInstallClasses(string $componentName, string $installerClass)
     {
         try {
-            $settings = [$componentName => $installerClass];
-
             $configFile = $this->getComponentConfigFile();
-            $settings = array_merge($this->parentConfig($configFile), $settings);
+            $settings = $this->parentConfig($configFile);
+
+            if (!isset($settings[$componentName])) {
+                $settings[$componentName] = [
+                    'installed' => false,
+                ];
+            }
+
+            $settings[$componentName]['installer'] = $installerClass;
 
             $this->filePutIterator($configFile, $settings);
         } catch (\Exception $e) {
