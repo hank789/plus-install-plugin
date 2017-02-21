@@ -69,8 +69,8 @@ class PlusComponentInstaller extends LibraryInstaller
 
     public function uninstall(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
-        parent::uninstall($repo, $package);
         $this->removeComponentInstaller($package->getPrettyName());
+        parent::uninstall($repo, $package);
     }
 
     protected function getPackageInstallerClass(PackageInterface $package): string
@@ -108,8 +108,8 @@ class PlusComponentInstaller extends LibraryInstaller
         if (isset($settings[$componentName])) {
             if ($settings[$componentName]['installed'] === true) {
                 throw new \Exception(
-                    'The component is not uninstalled, Please run:'.PHP_EOL,
-                    '   php artisan component '.$componentName.PHP_EOL
+                    'The component is not uninstalled, Please run:'.PHP_EOL.
+                    '   php artisan component uninstall '.$componentName.PHP_EOL
                 );
             }
 
