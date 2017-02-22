@@ -66,7 +66,6 @@ abstract class AbstractInstaller implements InstallerInterface
     public function install(Closure $next)
     {
         $next();
-        $this->output->success("Installed the {$this->getName()}");
     }
 
     /**
@@ -78,7 +77,6 @@ abstract class AbstractInstaller implements InstallerInterface
     public function update(Closure $next)
     {
         $next();
-        $this->output->success("Updated The {$this->getName()}");
     }
 
     /**
@@ -90,6 +88,5 @@ abstract class AbstractInstaller implements InstallerInterface
     public function uninstall(Closure $next)
     {
         $next();
-        $this->output->success("Uninstall The {$this->getName()}");
     }
 }
