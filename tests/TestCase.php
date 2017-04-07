@@ -1,6 +1,6 @@
 <?php
 
-namespace Zhiyi\Component\Installer\PlusInstallPlugin\Test;
+namespace Intervapp\Component\Installer\PlusInstallPlugin\Test;
 
 use Composer\Semver\VersionParser;
 use Composer\Util\Filesystem;

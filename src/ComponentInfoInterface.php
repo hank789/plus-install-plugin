@@ -1,6 +1,6 @@
 <?php
 
-namespace Zhiyi\Component\Installer\PlusInstallPlugin;
+namespace Intervapp\Component\Installer\PlusInstallPlugin;
 
 interface ComponentInfoInterface
 {

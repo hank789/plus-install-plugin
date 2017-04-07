@@ -1,8 +1,7 @@
 {
-  "name": "zhiyicx/plus-install-plugin",
+  "name": "intervapp/plus-install-plugin",
   "type": "composer-plugin",
-  "description": "ThinkSNS Plus component require plugin.",
-  "keywords": ["ts", "ts", "plus", "thinksns"],
+  "description": "Intervapp component require plugin.",
   "license": "MIT",
   "authors": [
     {
@@ -22,18 +21,18 @@
   },
   "autoload": {
     "psr-4": {
-      "Zhiyi\\Component\\Installer\\PlusInstallPlugin\\": "src/"
+      "Intervapp\\Component\\Installer\\PlusInstallPlugin\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Zhiyi\\Component\\Installer\\PlusInstallPlugin\\Test\\": "tests/"
+      "Intervapp\\Component\\Installer\\PlusInstallPlugin\\Test\\": "tests/"
     }
   },
   "extra": {
     "branch-alias": {
       "dev-master": "1.0-dev"
     },
-    "class": "Zhiyi\\Component\\Installer\\PlusInstallPlugin\\InstallerPlugin"
+    "class": "Intervapp\\Component\\Installer\\PlusInstallPlugin\\InstallerPlugin"
   }
 }
